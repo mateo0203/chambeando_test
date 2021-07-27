@@ -1,0 +1,56 @@
+.header{
+    width: 100%;
+    padding: 1rem 0;
+    background-color: #004870;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Noto Sans JP', sans-serif;
+    border-bottom: #e3e2e2 solid 2px;
+    height: 4rem;
+}
+
+.imagen{
+    width: 20rem
+}
+
+.logo{
+    padding-left: 2rem;
+}
+.logo h2{
+    font-size: 1.25rem;
+
+}
+.logo h2:hover{
+    color: #FFE552;
+    cursor: pointer;
+}
+.menu ul{
+    padding-left: 2rem;
+    color: #FFE552;
+}
+
+ul :hover{
+    color: #a6a832;
+    cursor: pointer;
+}
+.menu ul li{
+    display: inline-block;
+    padding-right: 2.5rem;
+    font-size: 1.5rem;
+    margin: 0;
+}
+.menu ul h3{
+    margin: 0;
+    font-size: 1.5rem;
+}
+#insta{
+    color: rgba(212, 37, 37, 0.73);
+    font-size: 2rem;
+    margin-right: 0.3rem;
+    
+}
+#facebook{
+    color: rgba(0, 11, 255, 0.73);
+    font-size: 2rem;
+}
