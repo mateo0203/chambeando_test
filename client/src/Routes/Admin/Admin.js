@@ -12,8 +12,11 @@ const Admin = ()=>{
         e.preventDefault()
         validateData()
     }
+
+    const url = "http://chambeando-env.eba-fe32cpvg.us-east-2.elasticbeanstalk.com"
+
     const validateData = async ()=>{
-        const validate = await axios.post("Chambeando-env.eba-fe32cpvg.us-east-2.elasticbeanstalk.com/api/v1/admin/login", {
+        const validate = await axios.post(`${url}/api/v1/admin/login`, {
             email,
             password
         })
@@ -28,6 +31,7 @@ const Admin = ()=>{
     const handlePasswordChange = (e) =>{
         setPassword(e.target.value)
     }
+
     return(
         <div className="adminPanel">
             <div className="form" id="form">                   

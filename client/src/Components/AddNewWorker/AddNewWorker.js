@@ -45,8 +45,10 @@ const AddNewWorker = ()=>{
         const formData = new FormData()
         formData.append('file', image)
 
+        const url = "http://chambeando-env.eba-fe32cpvg.us-east-2.elasticbeanstalk.com"
+
         try{
-            const image = axios.post("http://chambeando-env.eba-fe32cpvg.us-east-2.elasticbeanstalk.com//api/v1/admin/upload", formData,{
+            const image = axios.post(`${url}/api/v1/admin/upload`, formData,{
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -56,7 +58,7 @@ const AddNewWorker = ()=>{
         }
 
 
-        const NewWorker = await axios.post("http://chambeando-env.eba-fe32cpvg.us-east-2.elasticbeanstalk.com//api/v1/admin/create", {
+        const NewWorker = await axios.post(`${url}/api/v1/admin/create`, {
             nombre,
             apellidos,
             dni,

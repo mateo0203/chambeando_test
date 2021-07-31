@@ -21,6 +21,7 @@ CREATE TABLE admin (
     admin_email varchar (200) not null unique,
     admin_password varchar (200) not null
 );
+
 INSERT INTO trabajadores (nombre, apellidos, DNI, telefono, descripcion,profesion) VALUES ('Renato', 'Garcia', 06050473, 932469632, 'Hola soy el primer trabajador prueba de este proyecto' ,'electricista');
 INSERT INTO trabajadores (nombre, apellidos, DNI, telefono, descripcion, profesion) VALUES ('Renato', 'Jimenez', 06050472, 932469631, 'Hola soy el segundo trabajador prueba de este proyecto','albañil');
 INSERT INTO trabajadores (nombre, apellidos, DNI, telefono, descripcion, profesion) VALUES ('Renato', 'Villa', 06050471, 932469630, 'Hola soy el tercer trabajador prueba de este proyecto','carpintero');
