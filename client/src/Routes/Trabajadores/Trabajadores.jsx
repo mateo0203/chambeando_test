@@ -1,5 +1,6 @@
 import React, {useEffect, useContext, useState} from "react";
 import {TrabajadoresContext} from "../../Context/Context";
+import axios from "axios";
 import api from "../../API/api";
 import profilePhoto from "../Home/profilePhoto.png";
 import {useHistory} from "react-router-dom"
@@ -18,7 +19,7 @@ const Trabajadores = ()=>{
         }
         const profesiones = async ()=>{
             try {
-                const profesiones = await api.get("/workers/profesiones")
+                const profesiones = await axios.get("http://chambeando-env.eba-fe32cpvg.us-east-2.elasticbeanstalk.com/api/v1/workers/profesiones")
                 setProfesiones(profesiones.data.data.profesion)
             }catch (e) {
                 console.log(e.message)
@@ -26,7 +27,7 @@ const Trabajadores = ()=>{
         }
         const defaultProfesiones = async ()=>{
             try {
-                const defaultProfesiones = await api.get("/workers/profesionesdestacadas")
+                const defaultProfesiones = await axios.get("http://chambeando-env.eba-fe32cpvg.us-east-2.elasticbeanstalk.com/api/v1/workers/profesionesdestacadas")
                 setDefaultProfesiones(defaultProfesiones.data.data.profesionesDestacadas)
             }catch (e) {
                 console.log(e.message)
