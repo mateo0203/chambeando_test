@@ -19,7 +19,7 @@ const Trabajadores = ()=>{
         }
         const profesiones = async ()=>{
             try {
-                const profesiones = await axios.get("http://chambeando-env.eba-fe32cpvg.us-east-2.elasticbeanstalk.com/api/v1/workers/profesiones")
+                const profesiones = await api.get("/workers/profesiones")
                 setProfesiones(profesiones.data.data.profesion)
             }catch (e) {
                 console.log(e.message)
@@ -27,7 +27,7 @@ const Trabajadores = ()=>{
         }
         const defaultProfesiones = async ()=>{
             try {
-                const defaultProfesiones = await axios.get("http://chambeando-env.eba-fe32cpvg.us-east-2.elasticbeanstalk.com/api/v1/workers/profesionesdestacadas")
+                const defaultProfesiones = await api.get("/workers/profesionesdestacadas")
                 setDefaultProfesiones(defaultProfesiones.data.data.profesionesDestacadas)
             }catch (e) {
                 console.log(e.message)

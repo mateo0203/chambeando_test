@@ -8,7 +8,7 @@ const Admin = ()=>{
     const [password, setPassword] = useState("")
     const [status, setStatus] = useState(false)
 
-    const onClickForm = (e)=>{
+    const onClickForm = (e)=>{  
         e.preventDefault()
         validateData()
     }
