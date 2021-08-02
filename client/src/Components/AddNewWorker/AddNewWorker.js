@@ -45,7 +45,7 @@ const AddNewWorker = ()=>{
         const formData = new FormData()
         formData.append('file', image)
 
-        const url = "http://chambeando-env.eba-fe32cpvg.us-east-2.elasticbeanstalk.com"
+        const url = "https://chambeando.pe"
 
         try{
             const image = axios.post(`${url}/api/v1/admin/upload`, formData,{

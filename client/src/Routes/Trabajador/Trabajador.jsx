@@ -35,7 +35,7 @@ const Trabajador = ()=>{
                                 <h3>Profesion: {trabajador.profesion}</h3>
                                 <h3>Conoce más a {trabajador.nombre}:</h3>
                                 <p>{trabajador.descripcion}</p>
-                                <h3 id="valora"><a href={`https://api.whatsapp.com/send?phone=51941461510&text=La valoracion de ${trabajador.nombre} es: `}>Valora a {trabajador.nombre} dando click aquí</a></h3>
+                                <h3 id="valora"><a href={`https://api.whatsapp.com/send?phone=51941461510&text=(Coloque una valoración del 1-5. La valoración de ${trabajador.nombre} es: `}>Valora a {trabajador.nombre} dando click aquí</a></h3>
                             </div>
                         </div>            
                     )

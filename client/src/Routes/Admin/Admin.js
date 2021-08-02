@@ -13,7 +13,7 @@ const Admin = ()=>{
         validateData()
     }
 
-    const url = "http://chambeando-env.eba-fe32cpvg.us-east-2.elasticbeanstalk.com"
+    const url = "https://chambeando.pe"
 
     const validateData = async ()=>{
         const validate = await axios.post(`${url}/api/v1/admin/login`, {
