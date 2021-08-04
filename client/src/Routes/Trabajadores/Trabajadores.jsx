@@ -1,6 +1,5 @@
 import React, {useEffect, useContext, useState} from "react";
 import {TrabajadoresContext} from "../../Context/Context";
-import axios from "axios";
 import api from "../../API/api";
 import profilePhoto from "../Home/profilePhoto.png";
 import {useHistory} from "react-router-dom"
@@ -66,12 +65,12 @@ const Trabajadores = ()=>{
         <div className="Workers" onClick={hideSearchMenu}>
             <div className="presentacion-slogan">
                 <div className="presentacion-content">
-                    <h2 id="ayuda">¿EN QUE NECESITAS AYUDA?</h2>
+                    <h2 id="ayuda">¿En qué necesitas ayuda?</h2>
                     <br/>
                     <div className="search">
-                        <div className="input-search" onClick={showSearchMenu}>
+                        <div className="search-input" onClick={showSearchMenu}>
                             <i className="fas fa-search" id="search"/>
-                            <input type="text" placeholder="Necesita ayuda de un..." id="input" value={search} onChange={handleChangeInput}/>
+                            <input type="text" placeholder="Necesita ayuda de un..." autoComplete="off" id="input" value={search} onChange={handleChangeInput}/>
                         </div>
                     </div>
                     <div className="displayOptions" id="displayOptions">
@@ -107,7 +106,7 @@ const Trabajadores = ()=>{
                                 <div key={trabajador.trabajador_id} className="trabajador-destacado">
                                     <div className="profile">
                                         <div className="profileImage">
-                                            <img src={trabajador.image} alt="profilePhoto"/>
+                                            <img src={trabajador.image ? trabajador.image : profilePhoto} alt="profilePhoto"/>
                                         </div>
                                         <div className="presentacion-trabajador">
                                             <h2>{trabajador.nombre} {trabajador.apellidos}</h2>

@@ -1,15 +1,35 @@
 @import url('https://fonts.googleapis.com/css?family=Encode+Sans+SC&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Monserrat&display=swap');
 @import url('https://fonts.googleapis.com/css?family=PT+sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
 
+::-webkit-scrollbar {
+    width: 1rem;
+  }
+  ::-webkit-scrollbar-track {
+    background: #004870;
+  }
+  ::-webkit-scrollbar-thumb {
+    border: 2px solid white;
+    border-radius: 5px;
+  }
+body{
+    overflow-x: hidden;
+    background-color: #004870;
+}
 .Contenedor{
     background-color: #72CDF4;
-    height: 70rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 5vw;
 }
 
 #Resultado{
-    color: black;
-    background-color: white;
+    color: white;
+    font-family: "Ubuntu", sans-serif;
     display: inline;
     font-size: 2rem;
 }
@@ -20,51 +40,55 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 47rem;
+    height: 45rem;
+    width: 90vw;
+    overflow-x: hidden;
+    padding: 0 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: relative;
 }
 
 #NuestrosTrabajadores {
-    font-family: 'Encode Sans SC', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-size: 3rem;
     text-align: center;
     color: #FFE552;
     padding-bottom: 2rem;
-
 }
 
 .quienes_somos{
     color: #005581;
     text-align: center;
     font-size: 3.5rem;
-    padding-top: 1.2rem;
-    margin-bottom: 2rem;
-    font-family: 'Encode Sans SC', sans-serif;    
+    padding: 0 0 1.2rem 0;   
 }
 
 .Mision{
     background-color: #FFE552;
-    height: 20rem;
+    padding: 3rem calc(5vw - 2px);
+    width: 90vw;
+    font-family: "Ubuntu", sans-serif;
 }
 
 .parrafo{
     color: #005581;
-    font-size: 2rem;
-    font-family: 'Monserrat', sans-serif;
+    font-size: 30px;
     text-align: center;
     line-height:3rem
 }
 
 .container{
-    background-color: white;
-    padding: 1.5rem 3rem;
+    background-color: #004870;
+    border: 3px solid;
+    color: white;
+    margin-top: calc(4rem + 20px);
+    font-family: "Ubuntu", sans-serif;
+    padding: 30px 20px;
     border-radius: 4px;
     margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
 }
 .content h1{
     font-size: 3rem;
@@ -75,7 +99,6 @@
     margin-bottom: 1.5rem;
 }
 .content p{
-    color: #8D9797;
     max-width: 468px;
     margin-left: auto;
     margin-right: auto;
@@ -89,8 +112,11 @@
     justify-content: center;
 }
 .search-input{
-    border: solid 1px #b1b9c3;
+    border: solid 2px #b1b9c3;
+    background: #004870;
     padding-top: 0.5rem;
+    display: flex;
+    flex-direction: row;
     padding-bottom: 0.5rem;
     padding-left: 1rem;
     width: 75%;
@@ -101,42 +127,43 @@
 #search{
     font-size: 1rem;
     color: #c2c2c2;
-    padding-right: 1rem;
+    padding-right: 5px;
     cursor: pointer;
     
 }
 #input{
-    font-size: 1.2rem;
+    background: #004870;
+    font-family: "Ubuntu", sans-serif;
+    color: white;
+    font-size: 1rem;
+    padding: 0;
     border: none;
     cursor: pointer;
+}
+#input::placeholder{
+    color: #b1b9c3;
 }
 #input:focus, textarea:focus, select:focus{
     outline: none;
 }
 
 .seccion-destacados{
-    padding-top: 1.5rem;
-    padding-left: 1rem;
-    padding-bottom: 1.5rem;
+    padding: 1.5rem 0;
     background-color: #004870;
-    width:100%;
+    width:100vw;
 }
 .seccion-destacados h2{
     font-size: 1.5rem;
     font-weight: lighter;
-    
 }
 .trabajadores-destacados{
-    padding-top: 1.5rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    display: grid;
-    grid-template-columns: repeat(3, 20rem);
-    justify-content: space-evenly;
+    padding: 1.5rem 5vw;
+    display: flex;
+    grid-gap: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     background-color: #72CDF4;
-    margin-left: -1rem;
-    margin-bottom: -1.5rem;
-    margin-top: 1rem;
 }
 
 #valora{
@@ -145,8 +172,12 @@
 
 .trabajador-destacado{
     box-shadow: 0px 2px 8px rgba(0 0 0 / 25%);
-    margin-bottom: 2rem;
-    background-color: white;
+    border-radius: 5px;
+    width: clamp(300px, 25vw, 25vw);
+    background-color: #004870;
+    color: white;
+    font-family: "Ubuntu", sans-serif;
+    border: 3px solid #FFD200;
 }
 .profile{
     display: flex;
@@ -173,6 +204,7 @@ hr{
 }
 .descripcion p{
     font-size: 1.15rem;
+    margin: 15px 0;
     text-align: justify;
 }
 .descripcion h2{
@@ -225,10 +257,12 @@ hr{
     padding-bottom: 15px;
 }
 .ver-info button{
-    background-color: #e5e5e5;
-    padding: 8px 5px;
-    border-radius: 10px;
-    border: solid black 1px;
+    background-color: #005581;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #FFD200;
+    color: white;
+    font-family: "Ubuntu", sans-serif;
     cursor: pointer;
 }
 .presentacion-slogan{
@@ -236,33 +270,24 @@ hr{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 47rem;
-    position: relative;
+    height: 43rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .presentacion-content{
-    position: absolute;
-    background-color: white;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 35rem;
-    height: 11rem;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    border: 2px solid;
+    background-color: #004870;
 }
 #ayuda{
     text-align: center;
     font-size: 2.3rem;
     padding-top: 1rem;
     margin-bottom: 1.6rem;
-    font-family: 'Encode Sans SC', sans-serif;
-}
-.presentacion-slogan:before{
-    content:'';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    
+    font-family: "Ubuntu", sans-serif;
 }
 
 .search{
@@ -271,17 +296,6 @@ hr{
     justify-content: center;
     padding-bottom: 2rem;
 }
-.input-search{
-    border: solid 0.12rem #dcd6d6;
-    padding-top: 0.8rem;
-    padding-bottom: 0.5rem;
-    padding-left: 1rem;
-    width: 80%;
-    text-align: left;
-    margin: auto;
-    height: 1.3rem;
-    border-radius: 0.8rem;
-}
 
 .Trabajador a{
     color: #FFD200;
@@ -289,16 +303,6 @@ hr{
 
 .Trabajador p{
     font-family: 'PT Sans', sans-serif;
-}
-
-.Trabajador{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 70rem;
-    margin-top: 3rem;
-    
 }
 #contact-message{
     text-align: center;
@@ -311,27 +315,83 @@ hr{
 }
 .trabajadorInfo{
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     border: #8d9797 solid 1px;
-    padding: 30px 0px;
-    box-shadow: 0 2px 4px 1px rgb(177 185 195 / 30%);
+    padding: 30px;
+    grid-gap: 20px;
+    width: clamp(250px, 50vw, 50vw);
+    border: 3px solid;
     border-radius: 10px;
-    font-family: 'Tajawal', sans-serif;
-    background-color: white;
+    font-family: 'Tajal', sans-serif;
+    background-color: #005581;
+    color: white;
 }
 
 .trabajadorInfo img {
-    max-width: 30rem;
-    max-height:24rem;
-    
+    width: clamp(240px, 40%, 40%);
+    border-radius: 10px;
 }
 
-.presentacionTrabajador h2, h3{
+.presentacionTrabajador h2{
     margin-bottom: 1rem;
-    font-size: 1.8rem;
+    font-size: 35px;
+    font-weight: bold;
+}
+.presentacionTrabajador h3{
+    font-size: 25px;
+    margin-bottom: 1rem;
+}
+.presentacionTrabajador h4{
+    text-align: left;
+    margin: 30px 0 10px 0;
+    font-size: 30px;
+    font-weight: bold;
+}
+.presentacionTrabajador p{
+    text-align: left;
+    margin-bottom: 40px;
+}
+.presentacionTrabajador h3 a{
+    color: #72CDF4;
+    text-decoration: underline;
+    font-weight: bold;
+    transition: 1s;
+}
+.presentacionTrabajador h3 a:hover{
+    color: #79c2e0;
 }
 .presentacionTrabajador:last-child{
     margin-bottom: 0;
     font-size: 1.2rem;
 }
-
+footer{
+    background: #004870;
+    color: white;
+    padding: 0px 5vw;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 20px;
+}
+footer span{
+    font-family: "Ubuntu", sans-serif;
+    font-size: 20px;
+}
+footer a{
+    color: white;
+    font-size: 30px;
+    padding: 20px;
+    transition: 1s;
+}
+#ig-icon:hover{
+    background: rgb(216, 108, 216);
+}
+#fb-icon:hover{
+    background:#4267B2;
+}

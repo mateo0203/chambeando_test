@@ -1,56 +1,68 @@
-.header{
-    width: 100%;
-    padding: 1rem 0;
+.NavContainer{
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+nav{
+    width:90vw;
+    overflow: hidden;
+    padding: 0px 5vw;
+    display: flex;
+    flex-direction: row;
     background-color: #004870;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-family: 'Noto Sans JP', sans-serif;
-    border-bottom: #e3e2e2 solid 2px;
-    height: 4rem;
 }
-
-.imagen{
-    width: 20rem
+ nav div{
+     display: flex;
+     grid-gap: 1rem;
+ }
+ nav button{
+     background-color: #004870;
+     border: none;
+     font-size: 4rem;
+     color: white;
+ }
+ .toggleMenu{
+     display: none;
+ }
+ .imagen{
+    width: calc(10vw + 10vh + 20px);
 }
-
-.logo{
-    padding-left: 2rem;
+.toggle-logo{
+    display: none;
+    width: calc(5vw + 2vh + 20px);
 }
-.logo h2{
-    font-size: 1.25rem;
-
+ @media screen and (max-width: 768px){
+     .notToggle{
+         display: none;
+     }
+     .toggleMenu{
+         display: block; 
+     }
+     .toggle-logo{
+         display: block;
+     }
+     .imagen{
+         display: none;
+     }
+ }
+ .NavContainer a{
+    font-size: calc(20px + 1vh);
+    color: white;
+    padding: 30px 20px;
+    font-family: 'Ubuntu', sans-serif;
+    text-decoration: none;
+    transition: 1s;
 }
-.logo h2:hover{
-    color: #FFE552;
-    cursor: pointer;
+.NavContainer a:hover{
+    background-color: #07699e;
 }
-.menu ul{
-    padding-left: 2rem;
-    color: #FFE552;
-}
-
-ul :hover{
-    color: #a6a832;
-    cursor: pointer;
-}
-.menu ul li{
-    display: inline-block;
-    padding-right: 2.5rem;
-    font-size: 1.5rem;
-    margin: 0;
-}
-.menu ul h3{
-    margin: 0;
-    font-size: 1.5rem;
-}
-#insta{
-    color: rgba(212, 37, 37, 0.73);
-    font-size: 2rem;
-    margin-right: 0.3rem;
-    
-}
-#facebook{
-    color: rgba(0, 11, 255, 0.73);
-    font-size: 2rem;
+aside{
+    background-color: #07699e;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }

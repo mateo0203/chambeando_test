@@ -8,6 +8,7 @@ import Profesiones from "./Routes/Profesiones/Profesiones";
 import "./App.css"
 import Trabajador from "./Routes/Trabajador/Trabajador";
 import Admin from "./Routes/Admin/Admin";
+import Footer from "./Components/Footer/Footer";
 const App =()=>{
     return(
         <TrabajadoresContextProvider>
@@ -21,6 +22,7 @@ const App =()=>{
                         <Route exact path="/trabajadores/:id" component={Trabajador}/>
                         <Route exact path="/admin" component={Admin}/>
                     </Switch>
+                    <Footer/>   
                 </Router>
             </div>
         </TrabajadoresContextProvider>

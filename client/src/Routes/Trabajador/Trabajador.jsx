@@ -21,28 +21,26 @@ const Trabajador = ()=>{
     }, [])
 
     return(
-        <div className="Contenedor">
-        <div className="Trabajador">
+        <div className="Contenedor">    
             {
                 trabajadorInfo.map(trabajador=>{
                     return (
                         <div key={uniqid(trabajador.trabajador_id)} className="trabajadorInfo">
-                            <img src={trabajador.image} alt="profilePhoto"/>
+                            <img src={trabajador.image ? trabajador.image : profilePhoto} alt="profilePhoto"/>
                             <div className="presentacionTrabajador">
                                 <h2>{trabajador.nombre} {trabajador.apellidos}</h2>
                                 <h3>Teléfono: {trabajador.telefono}</h3>
                                 <h3><a href={`https://api.whatsapp.com/send?phone=51${trabajador.telefono}&text=${`Hola señor ${trabajador.nombre} encontré su número en la plataforma chambeando.pe y le escribo para cotizar un servicio. `}`}>Mándale un whatsapp haciendo click aquí</a></h3>
-                                <h3>Profesion: {trabajador.profesion}</h3>
-                                <h3>Conoce más a {trabajador.nombre}:</h3>
+                                <h4>Profesion: {trabajador.profesion}</h4>
+                                <h4>Conoce más a {trabajador.nombre}:</h4>
                                 <p>{trabajador.descripcion}</p>
-                                <h3 id="valora"><a href={`https://api.whatsapp.com/send?phone=51941461510&text=(Coloque una valoración del 1-5. La valoración de ${trabajador.nombre} es: `}>Valora a {trabajador.nombre} dando click aquí</a></h3>
+                                <h3 id="valora"><a href={`https://api.whatsapp.com/send?phone=51941461510&text=(Coloque una valoración del 1-5) La valoración de ${trabajador.nombre} es: `}>Valora a {trabajador.nombre} dando click aquí</a></h3>
                             </div>
                         </div>            
                     )
                 })
             }
-            <h2 id="contact-message">¡Contacta con un solo click!</h2>
-        </div>
+            {/* <h2 id="contact-message">¡Contacta con un solo click!</h2> */}
         </div>
     )
 }

@@ -1,7 +1,9 @@
-import React from "react";
-import {useHistory} from "react-router-dom"
+import React, { useState } from "react";
+import {Link, useHistory} from "react-router-dom"
 import "./Header.css"
 import logo from "./logo.jpeg"
+import ToggleLogo from "./ToggleLogo.png"
+
 const Header = ()=>{
     let history = useHistory()
     const handleClickHome = ()=>{
@@ -10,18 +12,30 @@ const Header = ()=>{
     const handleClickTrabajadores = ()=>{
         history.push("/trabajadores")
     }
+    const [NavState, setNavState] = useState(false)
+    const changeNavState = () => {
+        setNavState(!NavState)
+    }
     return (
-        <div className="header">
-            <img src={logo} oncClick={handleClickHome} alt="logo" className="imagen"/>
-            <nav className="menu">
-                <ul>
-                    <li onClick={handleClickHome}><h3>Inicio</h3></li>
-                    <li onClick={handleClickTrabajadores}><h3>Trabajadores</h3></li>
-                    <li><a target="_blank" rel="noreferrer noopener" href="https://www.instagram.com/chambeando.peru/"><i className="fab fa-instagram" id="insta"></i></a> <a target="_blank" rel="noreferrer noopener" href="https://www.facebook.com/profile.php?id=100070622113808"><i className="fab fa-facebook-square" id="facebook"></i></a></li>
-                </ul>
-            </nav>
+        <div className="NavContainer">
+            <nav>
+            <img src={logo} onClick={handleClickHome} alt="logo" className="imagen"/>
+            <img src={ToggleLogo} alt="logo" className="toggle-logo"/>
+            <div className="notToggle">
+            <Link to="/">Inicio</Link>
+            <Link to="/trabajadores">Trabajadores</Link>
+            </div>
+            <button className="toggleMenu" onClick={changeNavState}>
+            &#8801;
+            </button>
+        </nav>
+        {
+                NavState && <aside onClick={changeNavState}>
+                    <Link to="/">Inicio</Link>
+            <Link to="/trabajadores">Trabajadores</Link>
+                </aside>
+            }
         </div>
     )
-
 }
 export default Header

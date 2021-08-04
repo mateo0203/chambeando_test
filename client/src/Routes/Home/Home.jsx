@@ -2,8 +2,7 @@ import React, {useEffect, useState} from "react";
 import profilePhoto from "./profilePhoto.png";
 import api from "../../API/api";
 import uniqid from "uniqid";
-import {useHistory} from "react-router-dom";
-import axios from "axios";
+import {useHistory} from "react-router-dom"
 
 const Home = ()=>{
     const [trabajadoresDestacados, setTrabajadoresDestacados] = useState([])
@@ -79,7 +78,7 @@ const Home = ()=>{
                         <div className="busqueda">
                             <div className="search-input" onClick={showSearchMenu}>
                                 <i className="fas fa-search" id="search"/>
-                                <input type="text" placeholder="Necesita ayuda de un..." id="input" value={search} onChange={handleChangeInput}/>
+                                <input type="text" placeholder="Necesita ayuda de un..." autoComplete="off" id="input" value={search} onChange={handleChangeInput}/>
                             </div>
                         </div>
                        <div className="displayOptions" id="displayOptions">
