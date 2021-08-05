@@ -9,7 +9,18 @@ import "./App.css"
 import Trabajador from "./Routes/Trabajador/Trabajador";
 import Admin from "./Routes/Admin/Admin";
 import Footer from "./Components/Footer/Footer";
+import ReactGa from 'react-ga'
+import { useEffect } from "react";
+
 const App =()=>{
+
+    useEffect(() => {
+        ReactGa.initialize('G-Z4GW2QM44V')
+
+        //Report page views
+        ReactGa.pageview('/')
+    }, [])
+
     return(
         <TrabajadoresContextProvider>
             <div>
