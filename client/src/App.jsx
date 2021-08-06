@@ -15,7 +15,7 @@ import { useEffect } from "react";
 
 const App =()=>{
     useEffect(() => {
-        ReactGa.initialize('G-GH02MBWNX3')
+        ReactGa.initialize('UA-204278502-1')
     },[])
 
 
