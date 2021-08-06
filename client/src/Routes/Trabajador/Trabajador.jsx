@@ -3,6 +3,7 @@ import {useParams} from "react-router-dom"
 import api from "../../API/api";
 import profilePhoto from "../Home/profilePhoto.png"
 import uniqid from "uniqid"
+import ReactGA from 'react-ga'
 
 
 const Trabajador = ()=>{
@@ -20,6 +21,11 @@ const Trabajador = ()=>{
         getInfo()
     }, [])
 
+   const handleClick = (nombre) => {
+        ReactGA.event({category:'Mensaje de whatsapp a trabajador',action:'click'})
+       alert(`Te agradeceríamos mucho si después del trabajo pudieras regresar a darle una valoración y un comentario opcional a ${nombre} con el link de abajo. Sería de mucha ayuda para nosotros por la confianza que queremos generar en el futuro.`)
+    }
+
     return(
         <div className="Contenedor">    
             {
@@ -30,7 +36,7 @@ const Trabajador = ()=>{
                             <div className="presentacionTrabajador">
                                 <h2>{trabajador.nombre} {trabajador.apellidos}</h2>
                                 <h3>Teléfono: {trabajador.telefono}</h3>
-                                <h3><a href={`https://api.whatsapp.com/send?phone=51${trabajador.telefono}&text=${`Hola señor ${trabajador.nombre} encontré su número en la plataforma chambeando.pe y le escribo para cotizar un servicio. `}`}>Mándale un whatsapp haciendo click aquí</a></h3>
+                                <h3 onClick={() => handleClick(trabajador.nombre)}><a href={`https://api.whatsapp.com/send?phone=51${trabajador.telefono}&text=${`Hola señor ${trabajador.nombre} encontré su número en la plataforma chambeando.pe y le escribo para cotizar un servicio. `}`}>Mándale un whatsapp haciendo click aquí</a></h3>
                                 <h4>Profesion: {trabajador.profesion}</h4>
                                 <h4>Conoce más a {trabajador.nombre}:</h4>
                                 <p>{trabajador.descripcion}</p>
