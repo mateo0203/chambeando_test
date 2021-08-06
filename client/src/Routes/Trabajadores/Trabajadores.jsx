@@ -70,7 +70,7 @@ const Trabajadores = ()=>{
                     <div className="search">
                         <div className="search-input" onClick={showSearchMenu}>
                             <i className="fas fa-search" id="search"/>
-                            <input type="text" placeholder="Necesita ayuda de un..." autoComplete="off" id="input" value={search} onChange={handleChangeInput}/>
+                            <input type="text" placeholder="¿En qué necesita ayuda?" autoComplete="off" id="input" value={search} onChange={handleChangeInput}/>
                         </div>
                     </div>
                     <div className="displayOptions" id="displayOptions">

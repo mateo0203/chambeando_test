@@ -77,7 +77,7 @@ const Profesiones = (props)=>{
                     <div className="search">
                         <div className="input-search" onClick={showSearchMenu}>
                             <i className="fas fa-search" id="search"/>
-                            <input type="text" placeholder="Necesita ayuda de un..." id="input" value={search} onChange={handleChangeInput}/>
+                            <input type="text" placeholder="¿En qué necesita ayuda?" id="input" value={search} onChange={handleChangeInput}/>
                         </div>
                     </div>
                     <div className="displayOptions" id="displayOptions">
