@@ -23,7 +23,7 @@ const Trabajador = ()=>{
 
    const handleClick = (nombre) => {
         ReactGA.event({category:'Mensaje de whatsapp a trabajador',action:'click'})
-       alert(`Te agradeceríamos mucho si después del trabajo pudieras regresar a darle una valoración y un comentario opcional a ${nombre} con el link de abajo. Sería de mucha ayuda para nosotros por la confianza que queremos generar en el futuro.`)
+       alert(`Después del trabajo porfa déjale un comentario a ${nombre}, gracias!`)
     }
 
     return(
