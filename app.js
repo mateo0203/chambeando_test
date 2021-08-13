@@ -8,7 +8,7 @@ const fileUpload = require("express-fileupload")
 
 //app
 const app = express();
-
+//hshshshs
 app.use(express.static(path.join(__dirname, "build")))
 app.use(fileUpload())
 app.use(cors());
