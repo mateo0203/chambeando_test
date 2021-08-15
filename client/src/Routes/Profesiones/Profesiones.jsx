@@ -3,6 +3,7 @@ import uniqid from "uniqid";
 import profilePhoto from "../Home/profilePhoto.png";
 import {useHistory, useParams} from "react-router-dom";
 import api from "../../API/api";
+import ReactGA from 'react-ga';
 
 const Profesiones = (props)=>{
     const history = useHistory()
@@ -68,6 +69,10 @@ const Profesiones = (props)=>{
         const input = document.getElementById('input');
         input.select()
     }
+    const handleProfesion = (profesion) => {
+        ReactGA.event({category:'Click en Profesión',action:`${profesion}`})
+    }
+
     return(
         <div className="Workers" onClick={hideSearchMenu}>
             <div className="presentacion-slogan">
@@ -87,7 +92,7 @@ const Profesiones = (props)=>{
                                     return (
                                         <div key={uniqid(option.profesion)} onClick={()=> handleSelectOption(option.profesion)}>
                                             <div className="defaultOptions">
-                                                <h2>{option.profesion}</h2>
+                                                <h2 onClick={() => handleProfesion(option.profesion)}>{option.profesion}</h2>
                                             </div>
                                         </div>
                                     )
@@ -96,7 +101,7 @@ const Profesiones = (props)=>{
                                 searchOptions.map(option =>{
                                     return (
                                         <div className="option" key={uniqid(option.profesion)} onClick={()=>handleSelectOption(option.profesion)}>
-                                            <h2>{option.profesion}</h2>
+                                            <h2 onClick={() => handleProfesion(option.profesion)}>{option.profesion}</h2>
                                         </div>
                                     )
                                 })

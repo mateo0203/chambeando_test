@@ -21,8 +21,8 @@ const Trabajador = ()=>{
         getInfo()
     }, [])
 
-   const handleClick = (nombre) => {
-        ReactGA.event({category:'Mensaje de whatsapp a trabajador',action:'click'})
+   const handleClick = (nombre,apellido) => {
+        ReactGA.event({category:'Mensaje de whatsapp a trabajador',action:`${nombre} ${apellido}`})
        alert(`Después del trabajo porfa déjale un comentario a ${nombre}, gracias!`)
     }
 
@@ -36,7 +36,7 @@ const Trabajador = ()=>{
                             <div className="presentacionTrabajador">
                                 <h2>{trabajador.nombre} {trabajador.apellidos}</h2>
                                 <h3>Teléfono: {trabajador.telefono}</h3>
-                                <h3 onClick={() => handleClick(trabajador.nombre)}><a href={`https://api.whatsapp.com/send?phone=51${trabajador.telefono}&text=${`Hola señor ${trabajador.nombre} encontré su número en la plataforma chambeando.pe y le escribo para cotizar un servicio. `}`}>Mándale un whatsapp haciendo click aquí</a></h3>
+                                <h3 onClick={() => handleClick(trabajador.nombre, trabajador.apellidos)}><a href={`https://api.whatsapp.com/send?phone=51${trabajador.telefono}&text=${`Hola señor ${trabajador.nombre} encontré su número en la plataforma chambeando.pe y le escribo para cotizar un servicio. `}`}>Mándale un whatsapp haciendo click aquí</a></h3>
                                 <h4>Profesion: {trabajador.profesion}</h4>
                                 <h4>Conoce más a {trabajador.nombre}:</h4>
                                 <p>{trabajador.descripcion}</p>

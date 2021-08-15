@@ -4,6 +4,7 @@ import api from "../../API/api";
 import profilePhoto from "../Home/profilePhoto.png";
 import {useHistory} from "react-router-dom"
 import uniqid from "uniqid";
+import ReactGA from 'react-ga'
 const Trabajadores = ()=>{
     const history = useHistory()
     const {trabajadores, setTrabajadores} = useContext(TrabajadoresContext)
@@ -61,6 +62,10 @@ const Trabajadores = ()=>{
         const input = document.getElementById('input');
         input.select()
     }
+    const handleProfesion = (profesion) => {
+        ReactGA.event({category:'Click en Profesión',action:`${profesion}`})
+    }
+
     return(
         <div className="Workers" onClick={hideSearchMenu}>
             <div className="presentacion-slogan">
@@ -80,7 +85,7 @@ const Trabajadores = ()=>{
                                     return (
                                         <div key={uniqid(option.profesion)} onClick={()=> handleSelectOption(option.profesion)}>
                                             <div className="defaultOptions">
-                                                <h2>{option.profesion}</h2>
+                                                <h2 onClick={() => handleProfesion(option.profesion)}>{option.profesion}</h2>
                                             </div>
                                         </div>
                                     )
@@ -89,7 +94,7 @@ const Trabajadores = ()=>{
                                 searchOptions.map(option =>{
                                     return (
                                         <div className="option" key={uniqid(option.profesion)} onClick={()=>handleSelectOption(option.profesion)}>
-                                            <h2>{option.profesion}</h2>
+                                            <h2 onClick={() => handleProfesion(option.profesion)}>{option.profesion}</h2>
                                         </div>
                                     )
                                 })

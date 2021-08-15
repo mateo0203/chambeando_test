@@ -3,6 +3,7 @@ import profilePhoto from "./profilePhoto.png";
 import api from "../../API/api";
 import uniqid from "uniqid";
 import {useHistory} from "react-router-dom"
+import ReactGA from 'react-ga'
 
 const Home = ()=>{
     const [trabajadoresDestacados, setTrabajadoresDestacados] = useState([])
@@ -68,6 +69,10 @@ const Home = ()=>{
         const input = document.getElementById('input');
         input.select()
     }
+    const handleProfesion = (profesion) => {
+        ReactGA.event({category:'Click en Profesión', action:`${profesion}`})
+    }
+
     return (
         <div className="Home" onClick={hideSearchMenu}>
             <div className="presentacion">
@@ -88,7 +93,7 @@ const Home = ()=>{
                                        return (
                                            <div key={uniqid(option.profesion)} onClick={()=> handleSelectOption(option.profesion)}>
                                                <div className="defaultOptions">
-                                                   <h2>{option.profesion}</h2>
+                                                   <h2 onClick={() => handleProfesion(option.profesion)}>{option.profesion}</h2>
                                                </div>
                                            </div>
                                        )
@@ -97,7 +102,7 @@ const Home = ()=>{
                                    searchOptions.map(option =>{
                                        return (
                                            <div className="option" key={uniqid(option.profesion)} onClick={()=>handleSelectOption(option.profesion)}>
-                                               <h2>{option.profesion}</h2>
+                                               <h2 onClick={() => handleProfesion(option.profesion)}>{option.profesion}</h2>
                                            </div>
                                        )
                                    })
@@ -112,7 +117,7 @@ const Home = ()=>{
                 <p className="parrafo">
                     Chambeando es una plataforma virtual que brinda especialistas calificados y confiables que estén
                     dispuestos a cubrir tus necesidades en la brevedad de lo posible.<br/> Tenemos como objetivo combatir el desempleo actual causado
-                    por el Covid-19
+                    por el Covid-19. Ahorita estamos haciendo pruebas en La Encantada De Villa y Chorrillos con profesionales recomendados por la comunidad villana.
                 </p>
             </div>
         </div>
