@@ -16,11 +16,13 @@
   "dependencies": {
     "aws-sdk": "latest",
     "axios": "^0.21.1",
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "ejs": "latest",
     "express": "^4.17.1",
     "express-fileupload": "^1.2.1",
+    "joi": "^17.4.2",
     "nodemon": "^2.0.7",
     "pg": "^8.6.0"
   }
