@@ -11,6 +11,8 @@ import Admin from "./Routes/Admin/Admin";
 import Footer from "./Components/Footer/Footer";
 import ReactGa from 'react-ga'
 import { useEffect } from "react";
+import AddNewUser from "./Components/AddNewUser/AddNewUser";
+import AddReview from './Components/AddNewReview/AddNewReview'
 
 
 const App =()=>{
@@ -29,9 +31,11 @@ const App =()=>{
                         <Route exact path="/trabajadores" component={Trabajadores}/>
                         <Route exact path="/servicios/:id" component={Profesiones}/>
                         <Route exact path="/trabajadores/:id" component={Trabajador}/>
+                        <Route exact path="/Registro" component={AddNewUser}/>
                         <Route exact path="/admin" component={Admin}/>
+                        <Route exact path='/user/crearvaloracion' component={AddReview}/>
                     </Switch>
-                    <Footer/>   
+                   
                 </Router>
             </div>
         </TrabajadoresContextProvider>

@@ -395,3 +395,26 @@ footer a{
 #fb-icon:hover{
     background:#4267B2;
 }
+
+#registro-nuevoUsuario{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+
+}
+
+#registro-nuevoUsuario input{
+    display: block;
+    margin: 10px 0;
+    padding: 5px;
+    color: black;
+}
+
+#registro-nuevoUsuario label{
+    font-size: 1.25rem;
+    color: white;
+
+}
+
+

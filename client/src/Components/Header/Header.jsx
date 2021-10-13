@@ -24,6 +24,7 @@ const Header = ()=>{
             <div className="notToggle">
             <Link to="/">Inicio</Link>
             <Link to="/trabajadores">Trabajadores</Link>
+            <Link to="/Registro">Registro</Link>
             </div>
             <button className="toggleMenu" onClick={changeNavState}>
             &#8801;

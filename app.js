@@ -1,3 +1,5 @@
+// importing dependencias and modules
+
 const express = require("express");
 const cors = require("cors")
 require("dotenv").config()
@@ -7,9 +9,8 @@ const admin = require("./Routes/admin")
 const users = require("./Routes/users")
 const fileUpload = require("express-fileupload")
 
-//app
+// starting the app and settings 
 const app = express();
-//hshshshs
 app.use(express.static(path.join(__dirname, "build")))
 app.use(fileUpload())
 app.use(cors());
@@ -20,6 +21,8 @@ app.use("/api/v1/users",users)
 app.get("/*", (req, res)=>{
     res.sendFile(path.join(__dirname, "build", "index.html"))
 }) 
+
+
 //start app
 const PORT = process.env.PORT || 8080
 app.listen(PORT, ()=>{

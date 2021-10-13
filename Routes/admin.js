@@ -1,6 +1,6 @@
 const router = require("express").Router()
 const db = require("../DB")
-//const bcrypt = require("bcrypt")
+const bcrypt = require("bcryptjs")
 
 
 router.post("/login", async (req, res) => {

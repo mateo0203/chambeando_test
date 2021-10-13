@@ -1,12 +1,12 @@
-import React from 'react';
 import Axios from 'axios';
 import api from '../../API/api';
-import { response } from 'express';
+import {useState}  from 'react'
+import Button from 'react-bootstrap/Button';
 
 const AddNewUser = () =>{
     const [nombre, setNombre] = useState("")
     const [apellido, setApellido] = useState("")
-    const [usuario, setUsuario]
+    const [usuario, setUsuario] = useState('')
     const [password, setPassword] = useState("")
     const [dni, setDni] = useState("")
     const [email, setEmail] = useState("")
@@ -44,9 +44,9 @@ const AddNewUser = () =>{
         e.preventDefault()
     }
 
-    const handleSubmit = async () =>{
+    const handleSubmit1 = async () =>{
         try{
-            const response = api.post("/users/signUp",{
+            const response = api.post("/users/signUp", {
                 "nombre" : nombre,
                 "apellido" : apellido,
                 "usuario" : usuario,
@@ -55,22 +55,22 @@ const AddNewUser = () =>{
                 "email" : email,
                 "celular" : celular
             })
+            if (response.data.status == "Created"){
+                window.alert("Usuario Creado")
+            }
         }
         catch(err){
             console.log(err)
         }
-        if (response.data.status == "Created"){
-            window.alert("Usuario Creado")
-        }
+    
     }
 
     return(
-        <div className="addNewUser">
-            <form>
+        <div>
+            <form id='registro-nuevoUsuario'>
 
                 <label htmlFor="nombre">Nombre</label>
                 <input type="text" value={nombre} placeholder="Nombre" name="nombre" onChange={handleNombre}/>
-
                 <label htmlFor="apellido">Apellido</label>
                 <input type="text" value={apellido} placeholder="Apellido" name="apellido" onChange={handleApellido}/>
 
@@ -78,7 +78,7 @@ const AddNewUser = () =>{
                 <input type="text" value={usuario} placeholder="Nombre de Usuario" name="usuario" onChange={handleUsuario}/>
 
                 <label htmlFor="password">Contraseña</label>
-                <input type="text" value={password} placeholder="Contraseña" name="password" onChange={handleClave}/>
+                <input type="password" value={password} placeholder="Contraseña" name="password" onChange={handlePassword}/>
 
                 <label htmlFor="dni">DNI</label>
                 <input type="text" value={dni} placeholder="DNI" name="dni" onChange={handleDni}/>
@@ -89,7 +89,7 @@ const AddNewUser = () =>{
                 <label htmlFor="celular">Celular</label>
                 <input type="text" value={celular} placeholder="Número de celular" name="celular" onChange={handleCelular}/>
 
-                <button onClick={handleSubmit}>Crea el Usuario</button>
+                <Button onClick={handleSubmit} size='lg' variant="dark">Crea el Usuario</Button>
             </form>
         </div>
     )

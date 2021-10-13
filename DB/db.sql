@@ -28,15 +28,15 @@ CREATE TABLE Users (
     user_apellido varchar(100) not null,
     user_email varchar(100) unique not null,
     user_password varchar(50) not null,
-    user_DNI int not null unique,
     user_celular int not null
 );
 
 CREATE TABLE reviews(
     review_id BIGSERIAL NOT NULL PRIMARY KEY,
-    user_id BIGINT NOT NULL REFERENCES Users(id),
+    trabajador_id BIGINT NOT NULL REFERENCES trabajadores(trabajador_id),
+    user_id BIGINT NOT NULL REFERENCES Users(user_id),
     review text NOT NULL,
-    review_rating INT NOT NULL check(rating >=1 and rating <= 5)
+    review_rating INT NOT NULL check(review_rating >=1 and review_rating <= 5)
 );
 
 
