@@ -1,9 +1,5 @@
-# chambita
-## Encuentra a los mejores trabajadores al alcanze de tus manos
+# Chambeando
+### https://www.youtube.com/watch?v=iHsN4zewmX4
 
-Un proyecto destinado a ayudar personas a encontrar trabajos a traves nuestra plataform
-pg, nodemon, npm install, npm init, cors, dotenv 
+#### A project that lets people find workers across different kinds of services.
 
-crear carpeta .env
-
-cambiar en server, .env y Api
