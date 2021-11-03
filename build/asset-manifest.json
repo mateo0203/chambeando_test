@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.4c64594c.chunk.css",
-    "main.js": "/static/js/main.acb08381.chunk.js",
-    "main.js.map": "/static/js/main.acb08381.chunk.js.map",
+    "main.css": "/static/css/main.73a143a7.chunk.css",
+    "main.js": "/static/js/main.f0d530da.chunk.js",
+    "main.js.map": "/static/js/main.f0d530da.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.a06e69b5.js",
     "runtime-main.js.map": "/static/js/runtime-main.a06e69b5.js.map",
     "static/js/2.808d30fc.chunk.js": "/static/js/2.808d30fc.chunk.js",
     "static/js/2.808d30fc.chunk.js.map": "/static/js/2.808d30fc.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.4c64594c.chunk.css.map": "/static/css/main.4c64594c.chunk.css.map",
+    "static/css/main.73a143a7.chunk.css.map": "/static/css/main.73a143a7.chunk.css.map",
     "static/js/2.808d30fc.chunk.js.LICENSE.txt": "/static/js/2.808d30fc.chunk.js.LICENSE.txt",
     "static/media/App.css": "/static/media/ImgPros.1c42402b.jpeg",
     "static/media/ToggleLogo.5d744533.png": "/static/media/ToggleLogo.5d744533.png",
@@ -17,7 +17,7 @@
   "entrypoints": [
     "static/js/runtime-main.a06e69b5.js",
     "static/js/2.808d30fc.chunk.js",
-    "static/css/main.4c64594c.chunk.css",
-    "static/js/main.acb08381.chunk.js"
+    "static/css/main.73a143a7.chunk.css",
+    "static/js/main.f0d530da.chunk.js"
   ]
 }
