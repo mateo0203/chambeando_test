@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import Axios from 'axios';
 import api from '../../API/api';
 import { useParams } from 'react-router';
-import Button from 'react-bootstrap/Button';
+
 
 const AddReview = () => {
     const [review,setReview] = useState("")
@@ -32,16 +32,19 @@ const AddReview = () => {
     const handleReview = (e) => {
         setReview(e.target.value)
     }
+    const handleFirst = ()=>{
+        setStatus(0)
+    }
 
     return(
         <div className='reseñas'>
             {
                 status === 1 ?
                     <div className="reseña">
-                        <form >
+                        <form onSubmit={handleFirst}>
                             <label htmlFor="reseña">Reseña:</label>
-                            <input type="text" required name='reseña' onChange={handleReview} id='reseña'/>
-                            <Button  variant="primary" size="lg">Crear reseña</Button>
+                            <textarea required placeholder='escribe tu reseña...'></textarea>
+                            <button>Crear reseña</button>
                         </form>
                     </div>
                     :
@@ -57,7 +60,7 @@ const AddReview = () => {
                                     <option value="4">4</option>
                                     <option value="5">5</option>
                                 </select>
-                                <button>Agrega puntuación</button>
+                                <button>Crear Valoracion</button>
                             </div>
                             <button>Volver a Inicio</button>
                         </form>

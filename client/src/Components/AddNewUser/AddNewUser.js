@@ -1,7 +1,7 @@
 import Axios from 'axios';
 import api from '../../API/api';
 import {useState}  from 'react'
-import Button from 'react-bootstrap/Button';
+
 
 const AddNewUser = () =>{
     const [nombre, setNombre] = useState("")
@@ -40,13 +40,11 @@ const AddNewUser = () =>{
         setCelular(e.target.value)
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-    }
-
-    const handleSubmit1 = async () =>{
+    const handleSubmit = async (event) =>{
+        event.preventDefault()
         try{
-            const response = api.post("/users/signUp", {
+
+            const userInfo = {
                 "nombre" : nombre,
                 "apellido" : apellido,
                 "usuario" : usuario,
@@ -54,10 +52,11 @@ const AddNewUser = () =>{
                 "dni" : dni,
                 "email" : email,
                 "celular" : celular
-            })
-            if (response.data.status == "Created"){
-                window.alert("Usuario Creado")
             }
+
+            const response = api.post("/users/signUp", userInfo)
+            window.alert('Pedro')
+            localStorage.setItem("userInfo", JSON.stringify(userInfo))
         }
         catch(err){
             console.log(err)
@@ -89,7 +88,7 @@ const AddNewUser = () =>{
                 <label htmlFor="celular">Celular</label>
                 <input type="text" value={celular} placeholder="Número de celular" name="celular" onChange={handleCelular}/>
 
-                <Button onClick={handleSubmit} size='lg' variant="dark">Crea el Usuario</Button>
+                <button onClick={handleSubmit} size='lg' variant="dark">Crea el Usuario</button>
             </form>
         </div>
     )

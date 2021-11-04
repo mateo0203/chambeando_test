@@ -13,6 +13,7 @@ import ReactGa from 'react-ga'
 import { useEffect } from "react";
 import AddNewUser from "./Components/AddNewUser/AddNewUser";
 import AddReview from './Components/AddNewReview/AddNewReview'
+import Login from "./Components/Login/Login";
 
 
 const App =()=>{
@@ -34,6 +35,7 @@ const App =()=>{
                         <Route exact path="/Registro" component={AddNewUser}/>
                         <Route exact path="/admin" component={Admin}/>
                         <Route exact path='/user/crearvaloracion' component={AddReview}/>
+                        <Route exact path='/login' component={Login}/>
                     </Switch>
                    
                 </Router>

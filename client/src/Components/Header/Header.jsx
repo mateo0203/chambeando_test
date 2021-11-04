@@ -25,6 +25,7 @@ const Header = ()=>{
             <Link to="/">Inicio</Link>
             <Link to="/trabajadores">Trabajadores</Link>
             <Link to="/Registro">Registro</Link>
+            <Link to="/login">Login</Link>
             </div>
             <button className="toggleMenu" onClick={changeNavState}>
             &#8801;

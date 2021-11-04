@@ -14,6 +14,7 @@ Router.post('/signUp', async (req, res) => {
             errorInfo: error.details[0].message
         })
     }
+    
 
 
 
@@ -88,7 +89,7 @@ Router.post('/SignIn', async (req, res) => {
         else {
             return res.status(400).json({
                 statusRequest: 'failed',
-                errorInfo: 'Usuario o contraseña incorrectos.'
+                errorInfo: 'Contraseña incorrecta.'
             })
         }
     }).catch(error=>{
