@@ -1,0 +1,68 @@
+.NavContainer{
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+nav{
+    width:90vw;
+    overflow: hidden;
+    padding: 0px 5vw;
+    display: flex;
+    flex-direction: row;
+    background-color: #004870;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+ nav div{
+     display: flex;
+     grid-gap: 1rem;
+ }
+ nav button{
+     background-color: #004870;
+     border: none;
+     font-size: 4rem;
+     color: white;
+ }
+ .toggleMenu{
+     display: none;
+ }
+ .imagen{
+    width: calc(10vw + 10vh + 20px);
+}
+.toggle-logo{
+    display: none;
+    width: calc(5vw + 2vh + 20px);
+}
+ @media screen and (max-width: 768px){
+     .notToggle{
+         display: none;
+     }
+     .toggleMenu{
+         display: block; 
+     }
+     .toggle-logo{
+         display: block;
+     }
+     .imagen{
+         display: none;
+     }
+ }
+ .NavContainer a{
+    font-size: calc(20px + 1vh);
+    color: white;
+    padding: 30px 20px;
+    font-family: 'Ubuntu', sans-serif;
+    text-decoration: none;
+    transition: 1s;
+}
+.NavContainer a:hover{
+    background-color: #07699e;
+}
+aside{
+    background-color: #07699e;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}

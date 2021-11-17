@@ -1,0 +1,23 @@
+.adminPanel form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+}
+
+
+.adminPanel form input{
+    display: block;
+    margin: 10px 0;
+    border: #8d9797 1px solid;
+    width: 100%;
+    padding: 7.5px 0 7.5px 3px;
+}
+.adminPanel form button{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 5px 10px;
+    font-size: 1.1rem;
+}

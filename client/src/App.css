@@ -1,0 +1,595 @@
+@import url('https://fonts.googleapis.com/css?family=Encode+Sans+SC&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Monserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=PT+sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+
+::-webkit-scrollbar {
+    width: 1rem;
+  }
+  ::-webkit-scrollbar-track {
+    background: #004870;
+  }
+  ::-webkit-scrollbar-thumb {
+    border: 2px solid white;
+    border-radius: 5px;
+  }
+body{
+    overflow-x: hidden;
+    background-color: #004870;
+}
+.Contenedor{
+    background-color: #72CDF4;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 5vw;
+}
+
+#Resultado{
+    color: white;
+    font-family: "Ubuntu", sans-serif;
+    display: inline;
+    font-size: 2rem;
+}
+
+.presentacion{
+    text-align: center;
+    background-image: url("Routes/Home/ImgPros.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 45rem;
+    width: 90vw;
+    overflow-x: hidden;
+    padding: 0 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#NuestrosTrabajadores {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    color: #FFE552;
+    padding-bottom: 2rem;
+}
+
+.quienes_somos{
+    color: #005581;
+    text-align: center;
+    font-size: 3.5rem;
+    padding: 0 0 1.2rem 0;   
+}
+
+.Mision{
+    background-color: #FFE552;
+    padding: 3rem calc(5vw - 2px);
+    width: 90vw;
+    font-family: "Ubuntu", sans-serif;
+}
+
+.parrafo{
+    color: #005581;
+    font-size: 30px;
+    text-align: center;
+    line-height:3rem
+}
+
+.container{
+    background-color: #004870;
+    border: 3px solid;
+    color: white;
+    margin-top: calc(4rem + 20px);
+    font-family: "Ubuntu", sans-serif;
+    padding: 30px 20px;
+    border-radius: 4px;
+    margin: 0;
+}
+
+
+.content h1{
+    font-size: 3rem;
+    line-height: 49px;
+    max-width: 432px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5rem;
+}
+.content p{
+    max-width: 468px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    font-weight: normal;
+    font-size: 1.25rem;
+}
+.busqueda{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search-input{
+    border: solid 2px #b1b9c3;
+    background: #004870;
+    padding-top: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    width: 75%;
+    text-align: left;
+    margin: auto;
+    border-radius: 0.8rem;
+}
+#search{
+    font-size: 1rem;
+    color: #c2c2c2;
+    padding-right: 5px;
+    cursor: pointer;
+    
+}
+
+#clickCategorias{
+    color: black;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    text-decoration: underline;
+    margin-top: 0.3rem;
+
+}
+
+#clickCategorias:hover{
+    cursor: pointer;
+    color: black;
+    text-decoration: underline;
+}
+
+#input{
+    background: #004870;
+    font-family: "Ubuntu", sans-serif;
+    color: white;
+    font-size: 1rem;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+}
+#input::placeholder{
+    color: #b1b9c3;
+}
+#input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+
+.seccion-destacados{
+    padding: 1.5rem 0;
+    background-color: #004870;
+    width:100vw;
+}
+.seccion-destacados h2{
+    font-size: 1.5rem;
+    font-weight: lighter;
+}
+.trabajadores-destacados{
+    padding: 1.5rem 5vw;
+    display: flex;
+    grid-gap: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: #72CDF4;
+}
+
+#valora{
+    margin-top: 1rem;
+}
+
+.container{
+    border: 1px solid black;
+}
+
+#extraInfo{
+    margin-top: 1rem;
+}
+
+.trabajador-destacado{
+    box-shadow: 0px 2px 8px rgba(0 0 0 / 25%);
+    border-radius: 5px;
+    width: clamp(300px, 25vw, 25vw);
+    background-color: #004870;
+    color: white;
+    font-family: "Ubuntu", sans-serif;
+    border: 3px solid #FFD200;
+}
+.profile{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.profileImage img{
+    max-width: 10rem;
+    height: 8rem;
+    padding: 1rem 1rem 1rem 1rem;
+}
+.presentacion-trabajador{
+    padding: 1rem;
+}
+.presentacion-trabajador h2{
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+hr{
+    border: 1px solid #e5e5e5;
+}
+.descripcion{
+    padding: 0.5rem 1rem;
+}
+.descripcion p{
+    font-size: 1.15rem;
+    margin: 15px 0;
+    text-align: justify;
+}
+.descripcion h2{
+    margin-bottom: 0.5rem;
+    font-size: 1.6rem;
+    font-weight: 200;
+}
+
+.displayOptions{
+    box-shadow: 0 2px 4px 1px rgb(177 185 195 / 30%);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border: 1px solid #dce0e6;
+    background-color: #ffffff;
+    display: none;
+    position: absolute;
+    width: 367px;
+    left: 50%;
+    transform: translate(-50%);
+}
+.option{
+    padding: 15px;
+    cursor: pointer;
+    display: block;
+}
+.option h2{
+    color: #242a30;
+    text-align: left;
+    font-size: 1.3rem;
+
+}
+.option:hover{
+    background-color: #ececec;
+}
+.defaultOptions {
+    padding: 15px;
+    cursor: pointer;
+    display: block;
+}
+.defaultOptions h2 {
+    color: #242a30;
+    text-align: left;
+    font-size: 1.3rem;
+}
+.defaultOptions:hover{
+    background-color: #ececec;
+}
+.ver-info{
+    text-align: center;
+    padding-bottom: 15px;
+}
+.ver-info button{
+    background-color: #005581;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #FFD200;
+    color: white;
+    font-family: "Ubuntu", sans-serif;
+    cursor: pointer;
+}
+.presentacion-slogan{
+    background-image: url("Routes/Home/ImgPros.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 43rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.presentacion-content{
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    border: 2px solid;
+    background-color: #004870;
+}
+#ayuda{
+    text-align: center;
+    font-size: 2.3rem;
+    padding-top: 1rem;
+    margin-bottom: 1.6rem;
+    font-family: "Ubuntu", sans-serif;
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 2rem;
+}
+
+.Trabajador a{
+    color: #FFD200;
+}
+
+.Trabajador p{
+    font-family: 'PT Sans', sans-serif;
+}
+#contact-message{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding-top: 30px;
+    color: black;
+    font-family: 'Tajawal', sans-serif;
+
+}
+.trabajadorInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: #8d9797 solid 1px;
+    padding: 30px;
+    grid-gap: 20px;
+    width: clamp(250px, 50vw, 50vw);
+    border: 3px solid;
+    border-radius: 10px;
+    font-family: 'Tajal', sans-serif;
+    background-color: #005581;
+    color: white;
+}
+
+.trabajadorInfo img {
+    width: clamp(240px, 40%, 40%);
+    border-radius: 10px;
+}
+
+.presentacionTrabajador h2{
+    margin-bottom: 1rem;
+    font-size: 35px;
+    font-weight: bold;
+}
+.presentacionTrabajador h3{
+    font-size: 25px;
+    margin-bottom: 1rem;
+}
+.presentacionTrabajador h4{
+    text-align: left;
+    margin: 30px 0 10px 0;
+    font-size: 30px;
+    font-weight: bold;
+}
+.presentacionTrabajador p{
+    text-align: left;
+    margin-bottom: 40px;
+}
+.presentacionTrabajador h3 a{
+    color: #72CDF4;
+    text-decoration: underline;
+    font-weight: bold;
+    transition: 1s;
+}
+.presentacionTrabajador h3 a:hover{
+    color: #79c2e0;
+}
+.presentacionTrabajador:last-child{
+    margin-bottom: 0;
+    font-size: 1.2rem;
+}
+footer{
+    background: #004870;
+    color: white;
+    padding: 0px 5vw;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 15px;
+}
+footer span{
+    font-family: "Ubuntu", sans-serif;
+    font-size: 18px;
+}
+footer a{
+    color: white;
+    font-size: 30px;
+    padding: 20px;
+    transition: 1s;
+}
+
+#recomendacion{
+    margin-top: 1.2rem;
+}
+
+#redes{
+    margin-top: 1rem;
+}
+
+#wa-icon:hover{
+    background: green;
+}
+
+#ig-icon:hover{
+    background: rgb(216, 108, 216);
+}
+#fb-icon:hover{
+    background:#4267B2;
+}
+
+#login-usuario{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    width: clamp(300px,30vw,700px)
+}
+
+#login-usuario .input_not_submit{
+    display:block;
+    width: 100%;
+    height:2rem;
+    margin-bottom: 0.9rem;
+    margin-top: 0.7rem;
+}
+
+#login-usuario .submit{
+    width:30%
+}
+
+#login-usuario label{
+    color:white;
+    margin-bottom: 2rem;
+}
+
+#registro-nuevoUsuario{
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    width: clamp(280px,30vw,500px)
+
+}
+
+#registro-nuevoUsuario input{
+    display: block;
+    margin: 10px 0;
+    padding: 5px;
+    color: black;
+    width:100%;
+}
+
+#registro-nuevoUsuario label{
+    font-size: 1.25rem;
+    color: white;
+}
+
+.reseñas{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+    background-color: #004870;
+    border-radius: 1rem;
+    justify-content: space-around;
+    width: clamp(300px,25vw,500px)
+}
+
+.reseña{
+    padding: 1rem;
+}
+
+.reseñas textarea{
+    width:130%;
+    height: 100px;
+}
+.reseñas label {
+    display: block;
+    color: white;
+    margin-bottom: 0.6rem;
+}
+
+.buttonSubmit {
+    background-color: #004870;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5rem;
+}
+
+.valoracion {
+    margin-left: 1rem;
+    padding: 1rem;
+}
+
+#todo_review{
+    padding: 1.5rem 5vw;
+    display: flex;
+    grid-gap: 3rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: #72CDF4;
+}
+
+#Review{
+    box-shadow: 0px 2px 8px rgba(0 0 0 / 25%);
+    border-radius: 5px;
+    width: clamp(300px, 25vw, 25vw);
+    background-color: #004870;
+    color: white;
+    font-family: "Ubuntu", sans-serif;
+    border: 3px solid #FFD200;
+}
+
+#Review p{
+    margin-top: 2rem;
+}
+
+.hola{
+    background-color: #79c2e0;
+    width: 90vw;
+    overflow-x: hidden;
+    padding: 0 5vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    transform: translate(0%,20%);
+    margin-top: 4rem;
+}
+
+.hola h1{
+    font-size: 1rem;
+    margin: 1rem;
+    background-color: #004870;
+    border: 3px solid #E5E7EB;
+    box-sizing: border-box;
+    color: white;
+    display: flex;
+    font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-weight: 700;
+    justify-content: center;
+    line-height: 1.75rem;
+    padding: .75rem 1.65rem;
+    position: relative;
+    text-align: center;
+    text-decoration: none #000000 solid;
+    text-decoration-thickness: auto;
+    width: 100%;
+    max-width: 460px;
+    position: relative;
+    cursor: pointer;    
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+#secondForm{
+    background-color: #004870;
+    margin-top: 1.1rem;
+}
