@@ -30,16 +30,14 @@ const Admin = ()=>{
             setStatus(true)
         }
     }
+    
     const handleEmailChange = (e)=>{
         setEmail(e.target.value)
     }
+
     const handlePasswordChange = (e) =>{
         setPassword(e.target.value)
     }
-
-    
-
-
 
     return(
         <div className="adminPanel">
