@@ -1,4 +1,3 @@
-import axios from 'axios'
 import React, { useState, useEffect, useContext } from 'react' 
 import api from '../../API/api'
 import { useParams } from 'react-router'

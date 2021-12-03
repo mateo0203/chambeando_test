@@ -1,7 +1,6 @@
 import React, {useState} from "react";
-import axios from "axios";
 import api from "../../API/api";
-import uniqid from "uniqid";
+
 
 const AddNewWorker = ()=>{
     const [nombre, setNombre] = useState("")

@@ -1,10 +1,8 @@
-import axios from 'axios'
 import React, { useState, useEffect, useContext } from 'react' 
 import api from '../../API/api'
 import { useHistory } from 'react-router'
 import { TrabajadoresContext } from "../../Context/Context"
-import StarRating from '../starRating.jsx/starRating'
-import { Link } from 'react-router-dom'
+
 
 const Login =  () =>  {
     const history = useHistory()

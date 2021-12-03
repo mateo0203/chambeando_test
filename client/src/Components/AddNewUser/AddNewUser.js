@@ -1,4 +1,3 @@
-import Axios from 'axios';
 import api from '../../API/api';
 import {useState}  from 'react'
 import { useHistory } from 'react-router'; 
