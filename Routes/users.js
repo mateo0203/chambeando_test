@@ -218,7 +218,7 @@ Router.post("/forgotPassword", async (req, res) => {
 
             const token = jwt.sign(payload,secret,{expiresIn:'15m'})
 
-            const link = `http://localhost:3000/resetPassword/${id}/${token}`
+            const link = `https://www.chambeando.pe/resetPassword/${id}/${token}`
             
             const result = await sendEmail(correo,link)
             return res.status(200).json
