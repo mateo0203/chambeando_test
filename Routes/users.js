@@ -1,7 +1,14 @@
 const Router = require('express').Router()
 const db = require("../DB")
 const bcrypt = require('bcryptjs')
-const {validateSignUp, validateSignIn} = require('../UserValidation/UserValidation.js')
+const {validateSignUp, validateSignIn,validateReset} = require('../UserValidation/UserValidation.js')
+const jwt = require('jsonwebtoken')
+require('dotenv').config
+
+const {sendEmail} = require("../email")
+
+//set this in .env
+
 
 Router.post('/signUp', async (req, res) => {
 
@@ -33,6 +40,7 @@ Router.post('/signUp', async (req, res) => {
     bcrypt.hash(req.body.password, saltRounds)
         .then(async hash=>{
         const newUser = await db.query('INSERT INTO users (user_nombre, user_apellido, user_correo, user_password ,user_celular) values ($1, $2, $3, $4, $5) returning *', [req.body.nombre, req.body.apellido, req.body.correo, hash, req.body.celular])
+        
         if (newUser.rowCount === 0){
             return res.status(500).json({
                 statusRequest: 'failed',
@@ -56,11 +64,12 @@ Router.post('/signUp', async (req, res) => {
 Router.post('/signIn', async (req, res) => {
 
     //validating data
-
+    console.log("jsjs")
     const {error} = validateSignIn(req.body)
 
     if (error){
-        return res.status(400).json({
+        console.log(error)
+        return res.status(200).json({
             statusRequest: 'failed',
             errorInfo: error.details[0].message
         })
@@ -95,6 +104,8 @@ Router.post('/signIn', async (req, res) => {
             })
         }
     }).catch(error=>{
+        console.log("jsjsj")
+        console.log(error)
         return res.status(400).json({
             statusRequest: 'failed',
             errorInfo: 'Contraseña incorrecta'
@@ -187,6 +198,103 @@ Router.delete("/reviews/:id", async (req, res) => {
         })
     }
 })
+
+Router.post("/forgotPassword", async (req, res) => {
+    // check if the email exists
+    const {correo} = req.body
+    try
+    {
+        const check = await db.query('select * from users where user_correo = $1', [correo])
+        
+        if (check.rowCount == 1)
+        {
+            const password = check.rows[0].user_password
+            const id = check.rows[0].user_id
+
+            const secret = process.env.JWT_SECRET + password
+            
+
+            const payload = {user_id:id,user_correo:correo}
+
+            const token = jwt.sign(payload,secret,{expiresIn:'15m'})
+
+            const link = `http://localhost:3000/resetPassword/${id}/${token}`
+            
+            const result = await sendEmail(correo,link)
+            return res.status(200).json
+            (
+                {
+                statusRequest:'ok',
+                info: result
+                }
+            )
+        }
+        else
+        {
+            return res.status(200).json
+            ({
+                statusRequest:'failed',
+                errorInfo: "No existe un correo con ese usuario"
+            })
+        }
+    }
+        catch(err){
+            console.log(err)
+            return res.status(400).json({
+                statusRequest: 'failed',
+                error:err.message
+            })
+        }
+    
+    // mandar mail de reset password
+    //const secret = JWT_SECRET + req.body.email
+
+    //const payload = {
+       // email: //user.email,
+        //id: //user.id
+  //  }
+
+// const token = jwt.sign(payload, secret, {expireIn: '15m'})
+
+// const link = `http://localhost:5000/api/v1/users/forgotPassword/${user.id}/${token}`
+
+//send the email with gmail api
+
+})
+
+Router.post('/resetPassword/:id', async (req, res) => {
+    const {password} = req.body
+    const saltRounds = 10
+    const {id} = req.params
+    console.log(id)
+    console.log(password)
+    try {
+
+    const {error} = validateReset(req.body)
+    if(error)
+    {
+        return res.status(200).json({
+            statusRequest: 'failed',
+            errorInfo:"La contraseña debe ser mayor de 7 caracteres y menor que 30."
+        })
+    }
+
+
+    bcrypt.hash(password, saltRounds).then(hash => {
+        const response = db.query('Update users set user_password = $1 where user_id = $2;',[hash, id])
+
+        res.status(200).json({
+            statusRequest: 'ok',
+            info: response
+        })
+    })
+    }
+    catch(err){
+        console.log(err)
+    }
+
+})
+
 
 
 

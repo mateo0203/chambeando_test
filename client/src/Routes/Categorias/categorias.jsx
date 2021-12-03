@@ -7,14 +7,16 @@ import Footer from '../../Components/Footer/Footer'
 
 const Categorias = () => {
     const [categorias, setCategorias] = useState([])
+    const [arrayCategorias, setArrayCategorias] = useState([])
     const history = useHistory()    
     
-     
     useEffect( async () => {
         try{
             const response = await api.get("/workers/profesiones")
-            setCategorias(response.data.data.profesion)
-            console.log(categorias)
+            if (response.data.status == "success"){
+            setCategorias(response.data.data.profesion.map(categoria => {return categoria.profesion}).sort())
+            }
+            //setArrayCategorias(arrayCategorias.sort())
         }
         catch(err){
             console.log(err)
@@ -24,11 +26,13 @@ const Categorias = () => {
     const handleClick = (profesion) => {
         history.push("/servicios/"+profesion)
     }
+    console.log(categorias)
     return (
+        
         <div className="hola">
             {categorias.map(categoria =>{
                 return(
-                    <h1 onClick={() => {handleClick(categoria.profesion)}}>{categoria.profesion}</h1>
+                    <h1 onClick={() => {handleClick(categoria)}}>{categoria}</h1>
                 )
             })}
         </div >

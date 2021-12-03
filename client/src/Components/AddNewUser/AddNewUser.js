@@ -54,7 +54,7 @@ const AddNewUser = () =>{
             }
         }
         catch(err){
-            window.alert("Hubo un error con tu registro. ¡Intenta denuevo! Ten en cuenta que la contraseña tiene que tener entre 7 y 30 caracteres")
+            window.alert("Hubo un error con tu registro. ¡Intenta denuevo! Ten en cuenta que la contraseña tiene que tener entre 7 y 30 caracteres. Tienes que poner un correo válido y un celular válido")
         }
     
     }
@@ -72,10 +72,10 @@ const AddNewUser = () =>{
                 <input type="password" value={password} placeholder="Contraseña" name="password" onChange={handlePassword}/>
 
                 <label htmlFor="email">Correo Electrónico</label>
-                <input type="text" value={correo} placeholder="Correo Electrónico" name="correo" onChange={handleCorreo}/>
+                <input type="text" value={correo} placeholder="Ejemplo: usuario@gmail.com" name="correo" onChange={handleCorreo}/>
 
                 <label htmlFor="celular">Celular</label>
-                <input type="text" value={celular} placeholder="Número de celular" name="celular" onChange={handleCelular}/>
+                <input type="text" placeholder="Ejemplo: 999999999" value={celular} name="celular" onChange={handleCelular}/>
 
                 <button onClick={handleSubmit} size='lg' variant="dark">Crea el Usuario</button>
             </form>

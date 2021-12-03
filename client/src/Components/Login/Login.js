@@ -4,6 +4,7 @@ import api from '../../API/api'
 import { useHistory } from 'react-router'
 import { TrabajadoresContext } from "../../Context/Context"
 import StarRating from '../starRating.jsx/starRating'
+import { Link } from 'react-router-dom'
 
 const Login =  () =>  {
     const history = useHistory()
@@ -19,6 +20,10 @@ const Login =  () =>  {
 
     const handlePassword = (e) => {
         setPassword(e.target.value)    
+    }
+
+    const handleLink = () => {
+        history.push("/forgotPassword")
     }
 
     const handleSubmit = async (e) => {
@@ -58,6 +63,7 @@ const Login =  () =>  {
     return (
             <div>
             <form id="login-usuario">
+
                 <div>
                 <label htmlFor="email">Email</label>
                  <input class='input_not_submit' type="text" value={correo} placeholder="Escriba su Correo Electrónico" onChange={handleCorreo}/>
@@ -68,8 +74,9 @@ const Login =  () =>  {
                     <input class='input_not_submit' type="password" value={password} placeholder="Escriba su contraseña" onChange={handlePassword}/>
                 </div>
 
-                <div>
+                <div className="submitLine">
                     <input class="submit" type="submit" onClick={handleSubmit}/>
+                    <p onClick={handleLink}>¿Te olvidaste tu contraseña? Recupérala</p>
                 </div>
             </form>
         

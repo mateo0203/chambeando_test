@@ -7,14 +7,16 @@ const Admin = ()=>{
     const [permission, setPermission] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [status, setStatus] = useState(false)
+    const [status, setStatus] = useState(1)
 
     const mail = "mateo@gmail.com"
     const contraseña = "larry"
 
-    const onClickForm = (e)=>{  
+    const onClickForm = (e)=>{ 
+        e.preventDefault()
+        console.log(email) 
         if (email == mail && password == contraseña){
-            setStatus(true)
+            setStatus(2)
         }
     }
 
@@ -41,22 +43,22 @@ const Admin = ()=>{
 
     return(
         <div className="adminPanel">
+        {
+        status === 1 ?
             <div className="form" id="form">
-           {status === false ?
-           <div>
-              <form>
-                    <label htmlFor="Email">Email</label>
-                    <input type="text" name="Email" required placeholder="Email" value={email} onChange={handleEmailChange}/>
-                    <label htmlFor="Pass">Contraseña</label>
-                    <input type="password" name="Pass" placeholder="Contraseña" required value={password} onChange={handlePasswordChange}/>
-                    <button onClick={onClickForm}>Login</button>
-               </form>
-            </div>
-            :
-            <AddNewWorker/>
-           }      
-            </div>
-
+          <div> 
+            <form>
+                <label htmlFor="Email">Email</label>
+                <input type="text" name="Email" required placeholder="Email" value={email} onChange={handleEmailChange}/>
+                <label htmlFor="Pass">Contraseña</label>
+                <input type="password" name="Pass" placeholder="Contraseña" required value={password} onChange={handlePasswordChange}/>
+                <input type="submit" value="login" onClick={onClickForm}/>
+            </form>
+           </div>
+           </div>
+        :
+            <AddNewWorker/> 
+        }
         </div>
     )
 }

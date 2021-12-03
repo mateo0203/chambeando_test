@@ -52,14 +52,9 @@ const Trabajador = ()=>{
 
 
    const handleClick = (nombre,apellido) => {
-       if (userInfo)
-       {
         ReactGA.event({category:'Mensaje de whatsapp a trabajador',action:`${nombre} ${apellido}`})
        alert(`Después del trabajo porfa déjale una valoración y/o comentario a ${nombre} con el link de abajo, gracias!`)
-       }
-       else{
-           window.alert("Para poder contactar a los trabajadores tienes que iniciar sesión")
-       }
+       
     }
     return(
         <div className="Contenedor">    
@@ -72,20 +67,15 @@ const Trabajador = ()=>{
                             <img src={trabajador.image ? trabajador.image : profilePhoto} alt="profilePhoto"/>
                             <div className="presentacionTrabajador">
                                 <h2>{trabajador.nombre} {trabajador.apellidos}</h2>
-                                { userInfo ?
+                              
                                 <h3>Teléfono: {trabajador.telefono}</h3>
-                                :
-                                <h3>Teléfono: Solo disponible iniciando sesión</h3>
-                                }
+                              
                                 <h3 onClick={() => handleClick(trabajador.nombre, trabajador.apellidos)}>
-                                    {
-                                    userInfo ? 
+                                  
                                     <a href={`https://api.whatsapp.com/send?phone=51${trabajador.telefono}&text=${mensajeWhatsapp}`}>Mándale un whatsapp haciendo click aquí</a>
-                                       :
-                                    'Mándale un Whatsapp haciendo click aquí'    
-                                }
+
                                 </h3>       
-                                <h4>Profesion: {trabajador.profesiones.map(profesion=>{return profesion.includes('ñ')?`${profesion.replace('ñ', '¤')} `:`${profesion} ` })}</h4>
+                                <h4>Profesiones: {trabajador.profesiones.map(profesion=>{return profesion.includes('ñ')?`${profesion.replace('ñ', '¤')} `:`${profesion} ` })}</h4>
                                 <h4>Conoce más a {trabajador.nombre}:</h4>
                                 <p>{trabajador.descripcion}</p>
                             </div>

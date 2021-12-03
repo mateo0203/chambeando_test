@@ -75,3 +75,5 @@ INSERT INTO reviews ( trabajador_id,user_id,review,review_rating) VALUES (3,1,'C
 SELECT Users.user_nombre, Users.user_apellido, Users.user_usuario, Reviews.review, Reviews.review_rating from Reviews INNER JOIN Users ON Users.user_id = Reviews.user_id;
 
 SELECT Users.user_nombre,Users.user_apellido,Users.user_usuario,Reviews.review,Reviews.review_rating from Reviews inner join Users on Users.user_id = Reviews.user_id where Trabajador_id = 3;
+
+Update users set user_apellido = 'caca' where user_id = 1;

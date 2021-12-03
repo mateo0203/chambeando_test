@@ -103,6 +103,7 @@ const handleProfesiones = (e) => {
         })
         if (NewWorker.data.status === "created"){
             window.alert("El trabajador fue correctamente creado")
+            window.location.reload()
         }
        
     }

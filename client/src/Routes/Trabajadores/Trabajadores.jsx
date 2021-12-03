@@ -123,12 +123,7 @@ const Trabajadores = ()=>{
                                     <hr/>
                                     <div className="descripcion">
                                         <p>Servicio: {trabajador.profesiones.map(profesion=>{return profesion.includes("ñ")?`${profesion.replace("ñ", "¤")} `:`${profesion} ` })} </p>
-                                        {
-                                        userInfo ?
                                         <p>Teléfono: {trabajador.telefono}</p>
-                                        :
-                                        <p>Teléfono: Para ver los telefonos tienes que iniciar sesión.</p>
-                                        }
                                     </div>
                                     <div className="ver-info">
                                         <button type="submit" onClick={()=>handleTrabajadorInfo(trabajador.trabajador_id)}>VER MÁS INFO</button>

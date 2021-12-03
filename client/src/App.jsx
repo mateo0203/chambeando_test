@@ -15,6 +15,8 @@ import AddNewUser from "./Components/AddNewUser/AddNewUser";
 import AddReview from './Components/AddNewReview/AddNewReview';
 import Login from "./Components/Login/Login";
 import Categorias from "./Routes/Categorias/categorias";
+import ForgotPassword from "./Components/ForgotPassword/ForgotPassword";
+import ResetPassword from "./Components/ResetPassword/ResetPassword";
 
 
 const App =()=>{
@@ -38,6 +40,8 @@ const App =()=>{
                         <Route exact path='/user/crearvaloracion' component={AddReview}/>
                         <Route exact path='/login' component={Login}/>
                         <Route exact path='/categorias' component={Categorias}/>
+                        <Route exact path='/forgotPassword' component={ForgotPassword}/>
+                        <Route exact path='/resetPassword/:id/:token' component={ResetPassword}/>
                     </Switch>
                 </Router>
             </div>

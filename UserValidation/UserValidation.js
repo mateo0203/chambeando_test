@@ -32,11 +32,24 @@ const validateSignIn = (data)=>{
             .email({minDomainSegments: 2, tlds:{allow:['com']}})
             .required(),
         password: Joi.string()
-            .pattern(new RegExp('^[a-zA-Z0-9]{8,22}$'))
-            .required()
+            .min(7)
+            .max(30)
+            .required(),
     })
     return schema.validate(data)
 }
 
+const validateReset = (data)=>{
+    const schema = Joi.object({
+        password: Joi.string()
+            .min(7)
+            .max(30)
+            .required(),
+    })
+    return schema.validate(data)
+}
+
+
 module.exports.validateSignUp = validateSignUp
 module.exports.validateSignIn = validateSignIn
+module.exports.validateReset = validateReset
