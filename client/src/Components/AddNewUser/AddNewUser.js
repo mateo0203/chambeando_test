@@ -5,6 +5,7 @@ import { useHistory } from 'react-router';
 const AddNewUser = () =>{
     const [nombre, setNombre] = useState("")
     const [apellido, setApellido] = useState("")
+    const [apellido2, setApellido2] = useState("")
     const [password, setPassword] = useState("")
     const [correo, setCorreo] = useState("")
     const [celular, setCelular] = useState("")
@@ -18,6 +19,9 @@ const AddNewUser = () =>{
         setApellido(e.target.value)
     }
 
+    const handleApellido2 = (e) => {
+        setApellido2(e.target.value)
+    }
 
     const handlePassword = (e) => {
         setPassword(e.target.value)
@@ -35,12 +39,14 @@ const AddNewUser = () =>{
         event.preventDefault()
         try{
 
-            const userInfo = {
+            const userInfo = 
+            {
                 "nombre" : nombre,
                 "apellido" : apellido,
                 "password" : password,
                 "correo" : correo,
-                "celular" : celular
+                "celular" : celular,
+                "apellido2": apellido2
             }
             
             const response = await api.post("/users/signUp", userInfo)
@@ -64,8 +70,12 @@ const AddNewUser = () =>{
 
                 <label htmlFor="nombre">Nombre</label>
                 <input type="text" value={nombre} placeholder="Nombre" name="nombre" onChange={handleNombre}/>
-                <label htmlFor="apellido">Apellido</label>
+
+                <label htmlFor="apellido">Apellido Paterno</label>
                 <input type="text" value={apellido} placeholder="Apellido" name="apellido" onChange={handleApellido}/>
+
+                <label htmlFor="apellido2">Apellido Materno</label>
+                <input type="text" value={apellido2} placeholder="Apellido" name="apellido" onChange={handleApellido2}/>
 
                 <label htmlFor="password">Contraseña</label>
                 <input type="password" value={password} placeholder="Contraseña" name="password" onChange={handlePassword}/>

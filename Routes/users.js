@@ -39,7 +39,7 @@ Router.post('/signUp', async (req, res) => {
     const saltRounds = 10
     bcrypt.hash(req.body.password, saltRounds)
         .then(async hash=>{
-        const newUser = await db.query('INSERT INTO users (user_nombre, user_apellido, user_correo, user_password ,user_celular) values ($1, $2, $3, $4, $5) returning *', [req.body.nombre, req.body.apellido, req.body.correo, hash, req.body.celular])
+        const newUser = await db.query('INSERT INTO users (user_nombre, user_apellido, user_apellido2, user_correo, user_password ,user_celular) values ($1, $2, $3, $4, $5, $6) returning *', [req.body.nombre, req.body.apellido, req.body.apellido2, req.body.correo, hash, req.body.celular])
         
         if (newUser.rowCount === 0){
             return res.status(500).json({
@@ -124,7 +124,7 @@ Router.get('/reviews/:id', async (req, res)=>{
 
     try{
         console.log("doing..")
-        const allReviews = await db.query('SELECT Users.user_nombre,Users.user_apellido,Users.user_id ,Reviews.review,Reviews.review_rating,Reviews.review_id from Reviews inner join Users on Users.user_id = Reviews.user_id where Trabajador_id = $1;', [req.params.id])
+        const allReviews = await db.query('SELECT Users.user_nombre,Users.user_apellido,Users.user_apellido2,Users.user_id ,Reviews.review,Reviews.review_rating,Reviews.review_id from Reviews inner join Users on Users.user_id = Reviews.user_id where Trabajador_id = $1;', [req.params.id])
 
         if (allReviews.rowCount === 0){
             

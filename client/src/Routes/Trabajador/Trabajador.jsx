@@ -95,7 +95,7 @@ const Trabajador = ()=>{
                         <div id="Review">
                             <StarRating rating={review.review_rating}/>
 
-                            <h1>{review.user_nombre} {review.user_apellido}</h1>
+                            <h1>{review.user_nombre} {review.user_apellido} {review.user_apellido2 && review.user_apellido2 }</h1>
                             <p>{review.review}</p>
                             {
                                 review.user_id === userInfo.user_id && <button onClick={() => handleDelete(review.review_id)} style={{margin:'30px 20px 10px 100px'}}>Eliminar comentario</button>

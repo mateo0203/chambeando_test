@@ -10,6 +10,10 @@ const validateSignUp = (data)=>{
             .min(3)
             .max(30)
             .required(),
+         apellido2: Joi.string()
+            .min(3)
+            .max(30)
+            .required(),
         correo: Joi.string()
             .email({minDomainSegments: 2, tlds:{allow:['com']}})
             .required(),

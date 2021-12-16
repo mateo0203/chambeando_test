@@ -3,6 +3,7 @@ const db = require("../DB")
 
 router.get("/", async (req, res) => {
     try{
+        console.log("jajaja")
         const allWorkers = await db.query("SELECT * FROM trabajadores ORDER BY valoracion DESC")
         res.status(200).json({
             status: "success",

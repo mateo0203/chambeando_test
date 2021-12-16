@@ -108,7 +108,7 @@ const Trabajadores = ()=>{
             <div id="destacados" className="seccion-destacados">
                 <h2 id="NuestrosTrabajadores">Nuestros trabajadores:</h2>
                 <div className="trabajadores-destacados">
-                    {
+                {
                         trabajadores.map(trabajador=>{
                             return (
                                 <div key={trabajador.trabajador_id} className="trabajador-destacado">
@@ -122,7 +122,7 @@ const Trabajadores = ()=>{
                                     </div>
                                     <hr/>
                                     <div className="descripcion">
-                                        <p>Servicio: {trabajador.profesiones.map(profesion=>{return profesion.includes("ñ")?`${profesion.replace("ñ", "¤")} `:`${profesion} ` })} </p>
+                                        <p>Servicio: {trabajador.profesiones.map(profesion=>{return profesion.includes("ñ")?`${profesion.replace("ñ", "¤")} `:`${profesion} `})} </p>
                                         <p>Teléfono: {trabajador.telefono}</p>
                                     </div>
                                     <div className="ver-info">
