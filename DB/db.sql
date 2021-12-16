@@ -77,3 +77,5 @@ SELECT Users.user_nombre, Users.user_apellido, Users.user_usuario, Reviews.revie
 SELECT Users.user_nombre,Users.user_apellido,Users.user_usuario,Reviews.review,Reviews.review_rating from Reviews inner join Users on Users.user_id = Reviews.user_id where Trabajador_id = 3;
 
 Update users set user_apellido = 'caca' where user_id = 1;
+
+alter table users add user_apellido2 varchar (100);
